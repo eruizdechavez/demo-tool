@@ -1,0 +1,63 @@
+{
+  "name": "demo-tool",
+  "description": "A Demot CLI Tool",
+  "version": "1.0.0",
+  "author": "Erick Ruiz de Chavez @eruizdechavez",
+  "bin": {
+    "demo-tool": "./bin/run"
+  },
+  "bugs": "https://github.com/eruizdechavez/demo-tool/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.17",
+    "@oclif/config": "^1.13.2",
+    "@oclif/plugin-help": "^2.2.0",
+    "cheerio": "1.0.0-rc.3",
+    "cli-ux": "5.3.1",
+    "request": "2.88.0",
+    "request-promise-native": "1.0.7",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.0",
+    "@oclif/tslint": "^3.1.1",
+    "@types/cheerio": "0.22.12",
+    "@types/node": "^10.14.13",
+    "@types/request-promise-native": "1.0.16",
+    "globby": "^10.0.1",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/eruizdechavez/demo-tool",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "demo-tool",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "eruizdechavez/demo-tool",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p . -t stylish",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
